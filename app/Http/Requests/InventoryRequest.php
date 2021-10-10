@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class InventoryRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'responsables'=>'required',
+            'name_ar'=>'required',
+            'name_en'=>'required',
+            'phone'=>'',
+            'address'=>'',
+            'notes'
+        ];
+    }
+
+    public function messages(){
+        return [
+            'responsables.required'=>trans('validation.responsables.required'),
+            'name_ar.required'=>trans('validation.name_ar.required'),
+            'name_en.required'=>trans('validation.name_en.required'),
+        ];
+    }
+}
