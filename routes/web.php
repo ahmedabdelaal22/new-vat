@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-die("test");
+
 Route::auth();
 
 Route::get('lang', function () {
